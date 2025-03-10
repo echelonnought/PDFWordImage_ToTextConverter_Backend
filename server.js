@@ -13,6 +13,8 @@ app.use(fileRouter);
 // Enable CORS for frontend origin
 app.use(cors({
   origin: 'https://pdf-word-image-to-text-converter-frontend.vercel.app/', // Allow requests from Vite frontend
+  methods: ['POST'], // Allow only POST requests
+  allowedHeaders: ['Content-Type'], // Allow necessary headers
 }));
  
 app.use((req, res, next) => {
