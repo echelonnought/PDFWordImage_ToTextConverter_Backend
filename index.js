@@ -5,11 +5,11 @@ const logger = require('./config/logger');
  // Serve static files from 'public' directory
 
 
-// const httpServer = http.createServer(app);
-// // Start server
-// const server = httpServer.listen(config.port, () => {
-//     logger.info(`Server running at http://localhost:${config.port}`);
-// });
+const httpServer = http.createServer(app);
+// Start server
+const server = httpServer.listen(config.port, () => {
+    logger.info(`Server running at http://localhost:${config.port}`);
+});
 
 const exitHandler = () => {
     if (server) {

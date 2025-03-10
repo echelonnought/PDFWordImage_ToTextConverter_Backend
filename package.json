@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon server.js",
     "vercel-build": "echo 'No build step required'"
   },
   "name": "backend",
