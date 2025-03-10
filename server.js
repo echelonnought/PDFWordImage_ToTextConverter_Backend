@@ -12,9 +12,19 @@ app.use(fileRouter);
 
 // Enable CORS for frontend origin
 app.use(cors({
-  origin: 'https://pdf-word-image-to-text-converter-frontend.vercel.app/', // Allow requests from Vite frontend
-  methods: ['POST'], // Allow only POST requests
-  allowedHeaders: ['Content-Type'], // Allow necessary headers
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      'https://pdf-word-image-to-text-converter-frontend.vercel.app',
+      'http://localhost:5173' // For local dev
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['POST'],
+  allowedHeaders: ['Content-Type'],
 }));
  
 app.use((req, res, next) => {
