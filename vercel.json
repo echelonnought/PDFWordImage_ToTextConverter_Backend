@@ -8,7 +8,7 @@
     ],
     "routes": [
       {
-        "src": "tmp/upload",
+        "src": "/upload",
         "methods": ["POST", "OPTIONS"],
         "dest": "index.js"
       }
