@@ -10,13 +10,6 @@ const upload = multer({
     limits: { fileSize: 100 * 1024 * 1024 }, // 100MB limit
   });
 
-  router.post('/upload', upload.single('file'), async (req, res, next) => {
-    try {
-      await validateFile(req, res, next);
-      await convertDocs(req, res);
-    } catch (err) {
-      next(err);
-    }
-  });
+router.post('/upload', upload.single('file'), validateFile, convertDocs);
 
 module.exports = router;
