@@ -1,29 +1,70 @@
 {
  
   "name": "backend",
+ 
   "version": "1.0.0",
+ 
   "main": "index.js",
+ 
   "scripts": {
-    "start": "node index.js"
+ 
+   
+  "start": "node index.js"
+ 
   },
+ 
   "keywords": [],
+ 
   "author": "",
+ 
   "license": "ISC",
+ 
   "description": "",
+ 
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "http-status": "^2.1.0",
-    "joi": "^17.13.3",
-    "mammoth": "^1.9.0",
-    "multer": "^1.4.5-lts.1",
-    "pdf-poppler": "^0.2.1",
-    "tesseract.js": "^6.0.0",
-    "winston": "^3.17.0"
+ 
+   
+  "cors": "^2.8.5",
+ 
+   
+  "dotenv": "^16.4.7",
+ 
+   
+  "express": "^4.21.2",
+ 
+   
+  "http-status": "^2.1.0",
+ 
+   
+  "joi": "^17.13.3",
+ 
+   
+  "mammoth": "^1.9.0",
+ 
+   
+  "multer": "^1.4.5-lts.1",
+ 
+   
+  "pdf-poppler": "^0.2.1",
+ 
+   
+  "serverless-http": "^3.2.0",
+ 
+   
+  "tesseract.js": "^6.0.0",
+ 
+   
+  "winston": "^3.17.0"
+ 
   },
+ 
   "devDependencies": {
-    "@types/multer": "^1.4.12",
-    "nodemon": "^3.1.9"
+ 
+   
+  "@types/multer": "^1.4.12",
+ 
+   
+  "nodemon": "^3.1.9"
+ 
   }
 }
