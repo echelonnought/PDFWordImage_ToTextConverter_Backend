@@ -1,14 +1,10 @@
 {
   "scripts": {
-    "start": "nodemon index.js",
-    "vercel-build": "echo 'No build step required'"
+    "start": "index.js"
   },
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "engines": {
-    "node": "22.x"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
