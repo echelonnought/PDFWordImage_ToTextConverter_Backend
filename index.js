@@ -5,7 +5,7 @@ const logger = require('./config/logger');
  // Serve static files from 'public' directory
 
 
- if (config.env !== 'production' || !process.env.VERCEL) {
+ if (config.env !== 'production' || !process.platform === 'linux') {
   const httpServer = http.createServer(app);
   const server = httpServer.listen(config.port || 3000, () => {
     logger.info(`Server running at http://localhost:${config.port || 3000}`);
