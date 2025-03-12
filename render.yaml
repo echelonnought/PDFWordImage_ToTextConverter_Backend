@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: pdf-word-image-to-text-converter
+    env: node
+    plan: free # or starter, standard, etc., depending on your needs
+    region: oregon # or another region like frankfurt, singapore, etc.
+    branch: main
+    repo: https://github.com/echelonnought/PDFWordImage_ToTextConverter_Backend
+    buildCommand: npm install
+    startCommand: node index.js
+    autoDeploy: true
+    numInstances: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22.12.0 # Matches the version in your logs
+      - key: BUN_VERSION
+        value: 1.1.0  # Matches the version in your logs, if needed
