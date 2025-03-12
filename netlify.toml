@@ -1,0 +1,6 @@
+[build]
+  functions = "functions"  # Directory for serverless functions
+  publish = "public"      # Static assets (optional, adjust if not needed)
+
+[functions]
+  node_bundler = "esbuild"  # Faster bundling for Node.js functions
