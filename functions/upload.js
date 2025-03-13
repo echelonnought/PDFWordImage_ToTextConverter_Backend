@@ -1,33 +1,40 @@
-const express = require('express');
+
 const serverless = require('serverless-http');
-const multer = require('multer');
-const validateFile = require('../middlewares/validate');
-const convertDocs = require('../controller/converter.controller');
-const { errorHandler, errorConverter } = require('../middlewares/error');
-const cors = require('cors');
+const app = require('../server');
+const http = require('http');
+const config = require('../config/config');
+const logger = require('../config/logger');
 
-const app = express();
-
-// Multer setup
-const upload = multer({
-  dest: '/tmp/uploads/',
-  limits: { fileSize: 100 * 1024 * 1024 }, // 100MB
+const httpServer = http.createServer(app);
+const server = httpServer.listen(config.port || 5000, () => {
+logger.info(`Server running at http://localhost:${config.port}`);
 });
 
-// Middleware
-app.use(express.json());
-app.use(cors({
-  origin: ['https://pdf-word-image-to-text-converter-frontend.vercel.app', 'http://localhost:5173'],
-  methods: ['POST'],
-  allowedHeaders: ['Content-Type'],
-}));
 
-// Route
-app.post('/upload', upload.single('file'), validateFile, convertDocs);
-
-// Error handling
-app.use(errorConverter);
-app.use(errorHandler);
+const exitHandler = () => {
+    if (server) {
+      server.close(() => {
+        console.log('Server closed');
+        process.exit(1);
+      });
+    } else {
+      process.exit(1);
+    }
+  };
+   
+  const unExpectedErrorHandler = (error) => {
+    logger.error(error);
+    exitHandler();
+  };
+   
+  process.on('uncaughtException', unExpectedErrorHandler);
+  process.on('unhandledRejection', unExpectedErrorHandler);
+  process.on('SIGTERM', () => {
+    logger.info('SIGTERM received');
+    if (server) {
+      server.close();
+    }
+  });
 
 // Export as serverless function
 module.exports.handler = serverless(app);
