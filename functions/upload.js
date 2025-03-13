@@ -5,10 +5,10 @@ const http = require('http');
 const config = require('../config/config');
 const logger = require('../config/logger');
 
-const httpServer = http.createServer(app);
-const server = httpServer.listen(config.port || 5000, () => {
-logger.info(`Server running at http://localhost:${config.port}`);
-});
+// const httpServer = http.createServer(app);
+// const server = httpServer.listen(config.port || 5000, () => {
+// logger.info(`Server running at http://localhost:${config.port}`);
+// });
 
 
 const exitHandler = () => {
