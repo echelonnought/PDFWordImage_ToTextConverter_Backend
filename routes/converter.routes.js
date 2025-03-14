@@ -6,7 +6,7 @@ const convertDocs = require('../controller/converter.controller');
 
 // Set up multer for file uploads 
 const upload = multer({
-    dest: '/tmp/uploads/', // Vercel uses /tmp for temporary storage
+    dest: '/uploads', 
     limits: { fileSize: 100 * 1024 * 1024 }, // 100MB limit
   });
 

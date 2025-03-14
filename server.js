@@ -15,7 +15,7 @@ app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
       'https://pdf-word-image-to-text-converter-frontend.vercel.app',
-      'http://localhost:5173' // For local dev
+      'http://localhost:3001' // For local dev
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
