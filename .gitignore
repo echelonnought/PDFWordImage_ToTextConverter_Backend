@@ -4,3 +4,6 @@ combined.log
 eng.traineddata
 error.log
 .vercel
+
+# Local Netlify folder
+.netlify

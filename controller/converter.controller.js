@@ -11,7 +11,7 @@ const convertDocs = catchAsync( async (req, res) => {
 
         // Initialize Tesseract worker
         const worker = await createWorker('eng');
-        const filePath = req.file.path;
+        const filePath = req.file.path; 
         const fileExt = path.extname(req.file.originalname).toLowerCase();
         let extractedText = '';
     
@@ -65,4 +65,4 @@ const convertDocs = catchAsync( async (req, res) => {
    
 });
 
-module.exports = convertDocs;
+module.exports = convertDocs; 

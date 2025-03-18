@@ -2,11 +2,10 @@ const app = require('./server');
 const http = require('http');
 const config = require('./config/config');
 const logger = require('./config/logger');
- // Serve static files from 'public' directory
 
 
   const httpServer = http.createServer(app);
-  const server = httpServer.listen(config.port || 5000, () => {
+  const server = httpServer.listen(config.port, () => {
     logger.info(`Server running at http://localhost:${config.port}`);
   });
 
