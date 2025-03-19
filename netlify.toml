@@ -1,5 +1,4 @@
+[build]
+  functions = "functions/api"
 [functions]
-  directory = "functions"
-  external_node_modules = ["tesseract.js", "mammoth"]
-[functions.api]
-  timeout = 30 # 30 seconds
+  node_bundler = "esbuild"
