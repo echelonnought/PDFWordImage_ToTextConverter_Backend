@@ -14,7 +14,7 @@ const validateFileSchema = joi.object({
         'any.required': 'File type is missing',
       }),
     size: joi.number()
-      .max(100 * 1024 * 1024) // Max 100MB
+      .max(10 * 1024 * 1024) // Max 100MB
       .required()
       .messages({ 
         'number.max': 'File size must not exceed 100MB',
