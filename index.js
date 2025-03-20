@@ -5,7 +5,7 @@ const logger = require('./config/logger');
 
 
   const httpServer = http.createServer(app);
-  const server = httpServer.listen(config.port, () => {
+  const server = httpServer.listen(config.port, '0.0.0.0', () => {
     logger.info(`Server running at http://localhost:${config.port}`);
   });
 

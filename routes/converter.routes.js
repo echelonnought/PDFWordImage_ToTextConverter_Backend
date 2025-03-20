@@ -6,6 +6,6 @@ const uploadedMiddleware = require('../utils/upload');
 const rateLimit = require('../utils/rateLimitter')
 
 
-router.post('/.netlify/functions/api/upload', rateLimit, uploadedMiddleware, validateFile, convertDocs);
+router.post('/upload', rateLimit, uploadedMiddleware, validateFile, convertDocs);
 
 module.exports = router; 
