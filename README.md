@@ -103,7 +103,7 @@ Upload a file to extract text.
 **Example using cURL:**
 ```bash
 curl -X POST \
-  http://localhost:3000/upload \
+  http://localhost:4000/upload \
   -F "file=@/path/to/your/document.pdf"
 ```
 
